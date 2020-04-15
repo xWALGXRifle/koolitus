@@ -151,7 +151,7 @@ import random
 x = random.randint(1, 6)
 print(x)"""
 
-thislist = [1, 2, 3]
+"""thislist = [1, 2, 3]
 thislist2 = [9, 8, 7, 6, 5, 4]
 #if (len(thislist)) == 3:
 if (len(thislist)) == 4:
@@ -163,7 +163,7 @@ elif(len(thislist)) > 7:
 elif (len(thislist)) < 5 < (len(thislist2)):
     print (thislist + thislist2)
 a = thislist[1]
-print (a)
+print (a)"""
     
     
     
