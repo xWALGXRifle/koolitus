@@ -3,9 +3,9 @@ kasutaja = input("mis on teie nimi")
 
 kontroll = True
 while kontroll == True:
-    klass = input("warrior, defender, berseker, assasin")
-    relv = input("axe, swordshield, twohandssword, twoswords")
-    turvis = input("leather, light, medium, heavy")
+    klass = input("warrior\ndefender\nberseker\nassasin")
+    relv = input("axe\nswordshield\ntwohandssword\ntwoswords")
+    turvis = input("leather\nlight\nmedium\nheavy")
     if (klass == "warrior" or klass == "defender" or klass == "berseker" or klass == "assasin") and (relv == "axe" or relv == "swordshield" or relv == "twohandssword" or relv == "twoswords") and (turvis == "leather" or turvis == "light" or turvis == "medium" or turvis == "heavy"):
         kontroll = False
     else:
@@ -36,8 +36,8 @@ elif turvis == "medium":
 elif turvis == "heavy":
     armor = 25
 
-if klass == "warrior":# siin laheb errorrisse
-     elu = 100
+if klass == "warrior":
+     elu = 100    
 elif klass == "defender":
       elu = 150
 elif klass == "berseker":
@@ -60,7 +60,8 @@ while combat == True:
     Diablo ["elud"] = Diablo["elud"] - random.randint(0, 10)
     print ("Diblo lööb, pane valm valmis")
     player["elud"] = player["elud"] - random.randint(15, 25)""" #lihtsam versioon
-    if player ["klass"] == "warrior":
+    
+    if player ["klass"] == "warrior":# siin laheb errorrisse
         dmg = random.randint(12, 25)
     elif player ["klass"] == "defender":
         dmg = random.randint(4, 21) 
@@ -69,7 +70,7 @@ while combat == True:
     elif player ["klass"] == "assasin":
         dmg = random.randint(7, 24)
     
-    if dmg >= 19:
+    if dmg >= 25:
         Diablo["elud"] = Diablo["elud"] - dmg
         print(Diablo["elud"])
     else:
@@ -81,7 +82,17 @@ while combat == True:
     else:
         print("Diablo ei saanud haiget")
     
+    if player ["elud"] < 50:
+        lisa = "elu pott"
+        print("elu pott")
     if player["elud"] < 0:
         combat = False
         print("You DIED!")
-print("Game OVER!")
+print("""
+   _____
+  / ____|
+ | |  __  __ _ _ __ ___   ___    _____   _____ _ __
+ | | |_ |/ _` | '_ ` _ \ / _ \  / _ \ \ / / _ \ '__|
+ | |__| | (_| | | | | | |  __/ | (_) \ V /  __/ |
+  \_____|\__,_|_| |_| |_|\___|  \___/ \_/ \___|_|
+""")
