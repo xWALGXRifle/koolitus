@@ -3,16 +3,17 @@ kasutaja = input("mis on teie nimi")
 
 kontroll = True
 while kontroll == True:
-    klass = input("warrior\ndefender\nberseker\nassasin")
+    klass = input("warrior\ndefender\nberseker\nassassin")
     relv = input("axe\nswordshield\ntwohandssword\ntwoswords")
     turvis = input("leather\nlight\nmedium\nheavy")
-    if (klass == "warrior" or klass == "defender" or klass == "berseker" or klass == "assasin") and (relv == "axe" or relv == "swordshield" or relv == "twohandssword" or relv == "twoswords") and (turvis == "leather" or turvis == "light" or turvis == "medium" or turvis == "heavy"):
+    if (klass == "warrior" or klass == "defender" or klass == "berseker" or klass == "assassin") and (relv == "axe" or relv == "swordshield" or relv == "twohandssword" or relv == "twoswords") and (turvis == "leather" or turvis == "light" or turvis == "medium" or turvis == "heavy"):
         kontroll = False
     else:
         print("palun sisesta uuesti")
 
 player = {
     "nimi" : kasutaja,
+    "klass" : klass,
     "elud" : 50,
     "relv" : relv,
     "turvis" : turvis,
@@ -24,7 +25,7 @@ Diablo = {
     "elud" : 1500,
     "relv" : "põrgu küüned",
     "turvis" : "lohe nahk",
-    "maagia" : "tõukab vastast"
+    "maagia" : "2xtugevusrünnak"
     }
 
 if turvis == "leather":
@@ -34,16 +35,16 @@ elif turvis == "light":
 elif turvis == "medium":
     armor = 8
 elif turvis == "heavy":
-    armor = 25
+    armor = 20
 
 if klass == "warrior":
-     elu = 100    
+     player["elud"] = 100    
 elif klass == "defender":
-      elu = 150
+     player["elud"] = 150
 elif klass == "berseker":
-      elu = 125
-elif klass == "assasin":
-      elu = 75
+     player["elud"] = 125
+elif klass == "assassin":
+     player["elud"] = 75
 
 if relv == "axe":
     tugevus = 25
@@ -61,16 +62,16 @@ while combat == True:
     print ("Diblo lööb, pane valm valmis")
     player["elud"] = player["elud"] - random.randint(15, 25)""" #lihtsam versioon
     
-    if player ["klass"] == "warrior":# siin laheb errorrisse
+    if player ["klass"] == "warrior":
         dmg = random.randint(12, 25)
     elif player ["klass"] == "defender":
         dmg = random.randint(4, 21) 
     elif player ["klass"] == "berseker":
         dmg = random.randint(9, 20)
-    elif player ["klass"] == "assasin":
+    elif player ["klass"] == "assassin":
         dmg = random.randint(7, 24)
     
-    if dmg >= 25:
+    if dmg >= 19:
         Diablo["elud"] = Diablo["elud"] - dmg
         print(Diablo["elud"])
     else:
@@ -80,14 +81,18 @@ while combat == True:
         player["elud"] = player["elud"] - dmg
         print(player["elud"])
     else:
-        print("Diablo ei saanud haiget")
+        print("klass ei saanud haiget")
     
-    if player ["elud"] < 50:
+    if player ["elud"] < 50:#poolik
         lisa = "elu pott"
         print("elu pott")
+        
     if player["elud"] < 0:
         combat = False
         print("You DIED!")
+    if Diablo["elud"] < 0:
+        combat = False
+        print("Mission completed!")
 print("""
    _____
   / ____|
