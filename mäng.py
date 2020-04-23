@@ -1,93 +1,51 @@
 import random
-kasutaja = input("mis on teie nimi")
+import playerinf
+import dmginf
+import vastaseinf
 
-kontroll = True
-while kontroll == True:
-    klass = input("warrior\ndefender\nberseker\nassassin")
-    relv = input("axe\nswordshield\ntwohandssword\ntwoswords")
-    turvis = input("leather\nlight\nmedium\nheavy")
-    if (klass == "warrior" or klass == "defender" or klass == "berseker" or klass == "assassin") and (relv == "axe" or relv == "swordshield" or relv == "twohandssword" or relv == "twoswords") and (turvis == "leather" or turvis == "light" or turvis == "medium" or turvis == "heavy"):
-        kontroll = False
-    else:
-        print("palun sisesta uuesti")
+player = playerinf.playerSetup()
+print (player)
 
-player = {
-    "nimi" : kasutaja,
-    "klass" : klass,
-    "elud" : 50,
-    "relv" : relv,
-    "turvis" : turvis,
+
+character = {
+    "nimi" : player[0],
+    "klass" : player[1],
+    "elud" : 50 + playerinf.health(player[1]),
+    "relv" : playerinf.weapon(player[2]),
+    "turvis" : playerinf.armor(player[3]),
     "elu pott" : 2
     }
 
 Diablo = {
     "nimi" : "Diablo",
     "elud" : 1500,
-    "relv" : "põrgu küüned",
-    "turvis" : "lohe nahk",
-    "maagia" : "2xtugevusrünnak"
+    "relv" : vastaseinf.weapon(Diablo[2]), #100 dmg
+    "turvis" : vastaseinf.armor(Diablo[1]), # lisab 45 armorit
+    #"maagia" : "vastaseinf.magics(Diablo[3]) #kui eulud on all 100
     }
-
-if turvis == "leather":
-    armor = 2
-elif turvis == "light":
-    armor = 4
-elif turvis == "medium":
-    armor = 8
-elif turvis == "heavy":
-    armor = 20
-
-if klass == "warrior":
-     player["elud"] = 100    
-elif klass == "defender":
-     player["elud"] = 150
-elif klass == "berseker":
-     player["elud"] = 125
-elif klass == "assassin":
-     player["elud"] = 75
-
-if relv == "axe":
-    tugevus = 25
-elif relv == "swordshield":
-    tugevus = 14
-elif relv == "twohandssword":
-    tugevus = 30
-elif relv == "twoswords":
-    tugevus = 28
-    
+   
 combat = True
-while combat == True:
-    """print ("kasutaja lööb")
-    Diablo ["elud"] = Diablo["elud"] - random.randint(0, 10)
-    print ("Diblo lööb, pane valm valmis")
-    player["elud"] = player["elud"] - random.randint(15, 25)""" #lihtsam versioon
-    
-    if player ["klass"] == "warrior":
-        dmg = random.randint(12, 25)
-    elif player ["klass"] == "defender":
-        dmg = random.randint(4, 21) 
-    elif player ["klass"] == "berseker":
-        dmg = random.randint(9, 20)
-    elif player ["klass"] == "assassin":
-        dmg = random.randint(7, 24)
-    
-    if dmg >= 19:
+while combat == True:    
+
+    dmg = dmginf.dmg(character["klass"])
+  
+    if dmg >= 19:                                              #player ründab
         Diablo["elud"] = Diablo["elud"] - dmg
-        print(Diablo["elud"])
+        print("Diablo elud", Diablo["elud"])
     else:
         print("Diablo ei saanud haiget")
         
-    if random.randint(0, 20) >=armor:           #Diablo ründab
-        player["elud"] = player["elud"] - dmg
-        print(player["elud"])
+    if random.randint(0, 20) >=character["turvis"]:           #Diablo ründab
+        character["elud"] = character["elud"] - dmg
+        print("Sinu elud", character["elud"])
     else:
-        print("klass ei saanud haiget")
+        print("Sa ei saanud haiget") #klass ei saanud haiget
     
-    if player ["elud"] < 50:#poolik
+    if character ["elud"] < 50:
         lisa = "elu pott"
         print("elu pott")
         
-    if player["elud"] < 0:
+    if character["elud"] < 0:
         combat = False
         print("You DIED!")
     if Diablo["elud"] < 0:
