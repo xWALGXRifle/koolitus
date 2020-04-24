@@ -1,12 +1,12 @@
 import random
 def dmg(klass):
     if klass == "warrior":
-        dmg = random.randint(12, 25)
+        dmg = random.randint(47, 75)
     elif klass == "defender":
-        dmg = random.randint(4, 21) 
+        dmg = random.randint(44, 65) 
     elif klass == "berseker":
-        dmg = random.randint(9, 20)
+        dmg = random.randint(46, 67)
     elif klass == "assassin":
-        dmg = random.randint(7, 24)
+        dmg = random.randint(45, 72)
     return dmg
     

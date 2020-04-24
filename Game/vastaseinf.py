@@ -6,15 +6,15 @@ def vasatne():
 
 def armor(turvis):
     if turvis == "lohe nahk":
-        armor == 45
+        armor = 45
     return armor
 
 def weapon(relv):
     if relv == "põrgu küüned":
-        weapon == 100
+        weapon = 100
     return weapon
 
-#def magics(maagia):                            #see on koht mida ei saa hetkel teha
-    #if maagia == "2xtugevusrünnak":
-     #   magics == 200
-    #return magics
+def magics(maagia):                                 #see on koht mida ei oska hetkel teha
+    if maagia == "2xtugevusrünnak":
+        magics = 200
+    return magics

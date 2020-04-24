@@ -29,13 +29,13 @@ def armor(turvis):
 
 def weapon(relv):
     if relv == "axe":
-        tugevus = 25
+        tugevus = 50
     elif relv == "swordshield":
-        tugevus = 14
+        tugevus = 45
     elif relv == "twohandssword":
-        tugevus = 30
+        tugevus = 55
     elif relv == "twoswords":
-        tugevus = 28
+        tugevus = 53
     return tugevus
 
 def health(klass):
