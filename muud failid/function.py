@@ -18,7 +18,7 @@ a = 2
 b = 4
 d = summa (a, b)
 x= lahutus()
-s = sisesta()
+#s = sisesta()
 misc = extensionb.other()
 print(misc)
 print(d)

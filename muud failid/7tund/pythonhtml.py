@@ -1,4 +1,4 @@
-f = open("näidis.html", "w")
+f = open("muud failid/7tund/näidis.html", "w")
 code = """<html>
 <head></head>
 <body><p>"""
