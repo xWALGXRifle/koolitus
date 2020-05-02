@@ -5,7 +5,7 @@ def sorteerimine(lis): #(pole vahet mis siin sees on kirjutatud)
     kokku = 0
     for x in lis:
         if x%2 == 0: # kogu süsteem saab siit alguse
-            kokku = kokku + 1
+            kokku = kokku + 1 #lisab alati ühe juurde kui arv on paaris
             print(x, "paaris")
         else:
             print(x, "oli paaritu")
