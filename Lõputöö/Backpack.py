@@ -1,5 +1,9 @@
+#mõõk
+#nahastrüü
 #toiduained
 #joogipoolisega
+#võlujook.
+#15 kuldmünti
 #kõik mis tulevad seikluse käigus
 def backpack():
 "backpack" : ["#asjad"]
