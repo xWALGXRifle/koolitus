@@ -1,17 +1,9 @@
-#mõõk
-#nahastrüü
-#toiduained
-#joogipoolisega
-#võlujook.
-#15 kuldmünti
-#kõik mis tulevad seikluse käigus
-def backpack():
-"backpack" : ["#asjad"]
-
-
-
-#mõte
 def bp(list, items):
-    list.append(item)
+    list.append(items)
     return list
- 
+
+
+def update(old, new):
+    for x in new:
+        old.append(x)
+    return old

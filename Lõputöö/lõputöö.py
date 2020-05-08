@@ -1,87 +1,69 @@
 import math
+import playerinf
 import vastaseinf
-import vastused
-#import backpack
-#import random
+import täringuvisked
+#import vastused
+import Backpack
+import random
+import pood
+
+playerinfo = playerinf.playerSetup()
+enemyinfo = vastaseinf.NÕELUSS()
+newItems, newGold = pood.store1(100)
+items = ["toiduained", "joogipoolis"]
+items = Backpack.update(items, newItems)
 
 player = {
-"relv" : mõõk,
-"turvis" : nahknerüü,
-"kott" : ["toiduained", "joogipoolisega"],
-"elud" : vastupidavus,
-"õnn"  : õnn,
-"osavus" : osavus
-"raha" : Kuldmünt
+    "nimi" : playerinfo[0],
+    "relv" : playerinfo[1],
+    "turvis" : playerinfo[2],
+    "kott" : ["toiduained", "joogipoolisega"],
+    "vastupidavus" : playerinfo[3],
+    "õnn"  : playerinfo[4],
+    "osavus" : playerinfo[5],
+    "raha" :  newGold
        }
 
-vastane1 = {
-    "elu" :vastaseinf.vastupidavus,
-    "relv" :vastaseinf.osavus,
-         
-    }
-vastane2 = {
-    "elu" :vastaseinf.vastupidavus,
-    "relv" :vastaseinf.osavus,
-         
+enemy = {
+    "vastupidavus" : enemyinfo[0],
+    "osavus" : enemyinfo[1],
+    "drop" : enemyinfo[2]    
     }
 
-vastane3 = {
-    "elu" :vastaseinf.vastupidavus,
-    "relv" :vastaseinf.osavus,
-         
-    }
-
-    #combat kuhu liigud
+#combat kuhu liigud
 #ask = int(input("sisesta järgnev tee konna nr")) --- seda pole vaja
-rännak = (
-misioon1 = 261, 
-misioon2 = 177,
-misioon3 = 160,
-misioon4 = 8,
-misioon5 = 392,
-misioon6 = 15, 
-misioon7 = 217,
-misioon8 = 262,
-misioon9 = 377, 
-misioon10 = 205,
-misioon11 = 92,
-misioon12 = 299,
-misioon13 = 65,
-misioon14 = 330, 
-misioon15 = 116,
-misioon16 = 314,
-misioon17 = 294,
-misioon18 = 106,
-misioon19 = 288,
-misioon20 = 84,
-misioon21 = 146, 
-misioon22 = 245,
-misioon23 = 393,
-misioon24 = 369,
-misioon25 = 390,
-misioon26 = 190,
-misioon27 = 318,
-misioon28 = 231,
-misioon29 = 224,
-misioon30 = 332,
-misioon31 = 103,
-misioon32 = 57)
 
-# kui on vaja täringut veeretada
-kokku = 0
-for x in range(2):
-    täringud = random.randint(1, 6)
-    kokku = kokku + täringud
-    print(täringud)
-print(kokku)
+combat = True
+while combat == True:
+    playerHit = täringuvisked.d6korda2() + player["osavus"] 
+    enemyHit = täringuvisked.d6korda2() + enemy["osavus"]
+    if playerHit == enemyHit:
+        print("lõite üksteisest mööda")
+    elif playerHit > enemyHit:
+        enemy["vastupidavus"] = enemy["vastupidavus"] -2
+    else:
+        player["vastupidavus"] = player["vastupidavus"] -2
 
+    if player["vastupidavus"] == 0:
+        print("""
+   _____
+  / ____|
+ | |  __  __ _ _ __ ___   ___    _____   _____ _ __
+ | | |_ |/ _` | '_ ` _ \ / _ \  / _ \ \ / / _ \ '__|
+ | |__| | (_| | | | | | |  __/ | (_) \ V /  __/ |
+  \_____|\__,_|_| |_| |_|\___|  \___/ \_/ \___|_|
+        """)
+        combat = False
+    elif enemy["vastupidavus"] == 0:
+        combat = False
+        if enemy["drop"] == "mitte midagi":
+            print("Vastasel polnud aardeid")
+        else:       
+            if isinstance(enemy["drop"], int):
+                player["raha"] = player["raha"] + enemy["drop"]
+                print("sul on nüüd", player["raha"], "kulda")
+            else:
+                player["kott"].append(enemy["drop"])
+                print("Sinu seljakottis on nüüd", player["kott"])
 
-
-
-
-#backpack
-     def bp(list, items):
-            list.append(item)
-    return list
-
-    player["kott"] = bacpack.bp(player("kott"), items)
+#player["kott"] = bacpack.bp(player("kott"), items)

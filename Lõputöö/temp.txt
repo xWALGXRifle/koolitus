@@ -1,0 +1,89 @@
+rännak = (
+misioon1 = 261, 
+misioon2 = 177,
+misioon3 = 160,
+misioon4 = 8,
+misioon5 = 392,
+misioon6 = 15, 
+misioon7 = 217,
+misioon8 = 262,
+misioon9 = 377, 
+misioon10 = 205,
+misioon11 = 92,
+misioon12 = 299,
+misioon13 = 65,
+misioon14 = 330, 
+misioon15 = 116,
+misioon16 = 314,
+misioon17 = 294,
+misioon18 = 106,
+misioon19 = 288,
+misioon20 = 84,
+misioon21 = 146, 
+misioon22 = 245,
+misioon23 = 393,
+misioon24 = 369,
+misioon25 = 390,
+misioon26 = 190,
+misioon27 = 318,
+misioon28 = 231,
+misioon29 = 224,
+misioon30 = 332,
+misioon31 = 103,
+misioon32 = 57)
+
+
+
+
+vastane2 = {
+    "elu" :vastaseinf.vastupidavus,
+    "relv" :vastaseinf.osavus,
+         
+    }
+
+vastane3 = {
+    "elu" :vastaseinf.vastupidavus,
+    "relv" :vastaseinf.osavus,
+         
+    }
+
+007. Esimesed MÕRTSUKMESILASED    7           3 Teised MÕRTSUKMESILASED      8           4 kolmandad MÕRTSUKMESILASED   7
+009. GOBLIN     5           4 
+015. NÕELUSS     8          7
+029. Esimene ORK    5            5 Teine ORK      5            6
+043. Esimene METSIK MÄGILANE   7   5 Teine METSIK MÄGILANE       6          4
+049. Esimene GREMLIN     4          3 Teine GREMLIN       3  		   2
+071. GREMLIN  5  5
+079. VAMPIIRNAHKHIIR  5    5 Teine VAMPIIRNAHKHIIR  6    5 Kolmas VAMPIIRNAHKHIIR  5    7 
+084. RÜNKAELUKAS    8   11
+096. JAHIKOER 7   6 ja üle jäänud Esimene paar: JAHIKOER 6 6 JAHIKOER 5 6 Teine paar: JAHIKOER 6  7 MASKIGA MEES 8  7
+104. RÖÖVELNAINE 8 6 ja üle jäänud Esimene paar: RÖÖVEL A 7    6 RÖÖVEL B 6  4 Teine paar: RÖÖVEL A 7   5  RÖÖVEL B 5  6 Kui võidad
+107. TULEDEEMON 10 10
+117. GOBLIN 5  4
+118. METSSIGA 6  5
+123. PUUMEES 8 8 kaks*võitlema
+128. BARBAR 9 7
+153. KASSNAINE 8   5
+165. GREMLIN 5   3
+167. TIIVULINE LOHE 10   11
+181. KALAMEES 7   6
+186. VEREANGERJAS 5  4
+193. GREMLIN 4   4
+203. KUJUMUUTJA  10 10
+212. Esimene KLOONSÕDALANE 5 5 Teine KLOONSÕDALANE 6 4 Kolmas KLOONSÕDALANE 5  6 Neljas KLOONSÕDALANE 6  5
+227. GUUL 9  7
+231. Esimene SURMAHAUGAS 4  4 Teine SURMAHAUGAS  4  3 Kolmas SURMAHAUGAS 5  4
+241. KARU 7  8
+265. METSAHIIGLANE  9  9
+276. JUHTKOER 7  6 ja üle jäänud Esimene paar: JAHIKOER 6  6 JAHIKOER 5  6  Teine paar: JAHIKOER  6  5  MASKIGA MEES 8  7
+285. LIBAHUNT  8   9
+286. KUJUMUUTJA  10  10
+290. HIIDKOLL  8    12
+298. HIIDÄMBLIK  7  8
+303. PTERODAKTÜL  7   8
+310. KOOPATROLL  8  9
+317. Esimene PAHARET 6   6 Teine PAHARET 5  7
+330. Esimene HUNT  7  7 Teine HUNT   8   7 Kolmas HUNT   7   9
+347. KÄÄBUS   8    5
+352. AHVMEES 7   8
+377. PÜGMEE A  5   5    PÜGMEE B   5   6
