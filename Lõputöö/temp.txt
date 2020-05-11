@@ -57,7 +57,7 @@ vastane3 = {
 079. VAMPIIRNAHKHIIR  5    5 Teine VAMPIIRNAHKHIIR  6    5 Kolmas VAMPIIRNAHKHIIR  5    7 
 084. RÜNKAELUKAS    8   11
 096. JAHIKOER 7   6 ja üle jäänud Esimene paar: JAHIKOER 6 6 JAHIKOER 5 6 Teine paar: JAHIKOER 6  7 MASKIGA MEES 8  7
-104. RÖÖVELNAINE 8 6 ja üle jäänud Esimene paar: RÖÖVEL A 7    6 RÖÖVEL B 6  4 Teine paar: RÖÖVEL A 7   5  RÖÖVEL B 5  6 Kui võidad
+104. RÖÖVELNAINE 8 6 ja üle jäänud Esimene paar: RÖÖVEL A 7    6 RÖÖVEL B 6  4 Teine paar: RÖÖVEL A 7   5  RÖÖVEL B 5  6
 107. TULEDEEMON 10 10
 117. GOBLIN 5  4
 118. METSSIGA 6  5
